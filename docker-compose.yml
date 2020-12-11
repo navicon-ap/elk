@@ -25,6 +25,7 @@ services:
       discovery.type: single-node
     networks:
       - common_network
+    restart: always 
 
   logstash:
     build:
@@ -51,6 +52,7 @@ services:
       - common_network
     depends_on:
       - elasticsearch
+    restart: always 
 
   kibana:
     build:
@@ -68,6 +70,7 @@ services:
       - common_network
     depends_on:
       - elasticsearch
+    restart: always 
 
 networks:
   common_network:
